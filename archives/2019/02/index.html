@@ -11,7 +11,7 @@
 
     <title>
         
-        java - undefined
+        
         
     </title>
 
@@ -65,7 +65,7 @@
                     <span>标签</span>
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="/archives">
                     <i class="iconfont icon-guidang2"></i>
                     <span>存档</span>
@@ -87,10 +87,6 @@
             
         </ul>
     </div>
-    
-        <div id="toc" class="toc-article">
-    
-</div>
     
 </div>
 
@@ -117,25 +113,105 @@
         
 
 
-<div class="post-container">
-    <div class="post-title">
-        java
-    </div>
+<!-- 归档列表 -->
 
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2019-03-11 09:34:09</span></span>
-        
-        
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
+<div class="archives-container">
 
-    </div>
-    <div class="post-content ">
+<div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2019">
+                    <span class="tag-text">2019</span>
+                </span>
+    <ul>
         
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>02-15</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2019/02/15/设计模式六大原则/">
+                        <span>
+                            设计模式六大原则
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
         
-        <div id="comment-container">
-        </div>
-    </div>
+
+    </ul>
+</div>
+
+<div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2018">
+                    <span class="tag-text">2018</span>
+                </span>
+    <ul>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>12-10</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2018/12/10/maven问题/">
+                        <span>
+                            maven Invalid bound statement
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>08-24</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2018/08/24/Java二维数组引用/">
+                        <span>
+                            Java二维数组引用
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>08-07</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2018/08/07/vue后续/">
+                        <span>
+                            vue后续
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>08-06</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2018/08/06/vue初步学习/">
+                        <span>
+                            vue初步学习
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+
+    </ul>
+</div>
+
 </div>
     </div>
 </div>
@@ -175,7 +251,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = true
+    window.isPost = false
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
