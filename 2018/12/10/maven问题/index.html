@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="blog">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        maven Invalid bound statement - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg">
+        </div>
+        <div class="name">
+            <i>xiaosmile</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网上总结的一般原因"><span class="toc-text">网上总结的一般原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方法一"><span class="toc-text">解决方法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方法二"><span class="toc-text">解决方法二</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        maven Invalid bound statement
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-12-10 09:05:20</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#maven" title="maven">maven</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>昨天在使用maven构建mybatis+spring boot项目时:出现了</p>
+<blockquote>
+<p>org.apache.ibatis.binding.BindingException: Invalid bound statement (not found) exception</p>
+</blockquote>
+<h2 id="网上总结的一般原因"><a href="#网上总结的一般原因" class="headerlink" title="网上总结的一般原因"></a>网上总结的一般原因</h2><p>Mapper interface和xml文件的定义对应不上，需要检查包名，namespace，函数名称等能否对应上。<br>按以下步骤一一执行：<br>1、检查xml文件所在的package名称是否和interface对应的package名称一一对应<br>2、检查xml文件的namespace是否和xml文件的package名称一一对应<br>3、检查函数名称能否对应上<br>4、去掉xml文件中的中文注释<br>5、随意在xml文件中加一个空格或者空行然后保存<br>但是在我检查完上述步骤后，并没有发现所谓错误。于是我查看了编译后的target文件夹发现，在文件夹中并没有使用的mapper文件，于是我在网上查看了一下资料发现maven项目默认不会编译Java文件夹里的代码，而是集中编译resources文件夹。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="解决方法一"><a href="#解决方法一" class="headerlink" title="解决方法一"></a>解决方法一</h3><p>使用项目路径下resources文件夹,把所有的配置文件都放到resources中管理.<br><img src="http://xiaosmie-blog-img.oss-cn-beijing.aliyuncs.com/18-12-10/31244278.jpg" alt></p>
+<h3 id="解决方法二"><a href="#解决方法二" class="headerlink" title="解决方法二"></a>解决方法二</h3><p>在pom文件中添加指定资源目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line">      ...</span><br><span class="line">      &lt;resources&gt;</span><br><span class="line">          ...</span><br><span class="line">          &lt;!--指定xml文件位置--&gt;</span><br><span class="line">          &lt;resource&gt;</span><br><span class="line">              &lt;directory&gt;src/main/java&lt;/directory&gt;</span><br><span class="line">              &lt;includes&gt;</span><br><span class="line">                  &lt;include&gt;**/*.xml&lt;/include&gt;</span><br><span class="line">              &lt;/includes&gt;</span><br><span class="line">              &lt;filtering&gt;true&lt;/filtering&gt;</span><br><span class="line">          &lt;/resource&gt;</span><br><span class="line">      &lt;/resources&gt;</span><br><span class="line">  &lt;/build&gt;</span><br></pre></td></tr></table></figure></p>
+
+        
+        <div id="comment-container">
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</html>
